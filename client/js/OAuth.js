@@ -3,7 +3,7 @@ $("#prodBtn").click(prodLogin);
 $("#sandBtn").click(sandLogin);
 
 var apiVersion = 'v30.0',
-    clientId = '3MVG9d8..z.hDcPJhIRYVTpYWZHuroqLXvHM8Aj_E6SZg5QqkE7O9wsqkn1qV27itvbN0EqgKZKp7PO8wJz8X',
+    clientId = '3MVG9d8..z.hDcPJhIRYVTpYWZB2R8j6bcd4wbneijCZA4LXY6_q4WL7rdpR9rgPAiwVMa8AsH3CNsu4O.9bM',
     loginUrl = 'https://login.salesforce.com/',
     redirectURI = "https://lwcide.herokuapp.com/oauthcallback.html", 
     proxyURL = 'https://lwcide.herokuapp.com/proxy/',
