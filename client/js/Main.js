@@ -80,6 +80,10 @@ function prepareListOptions(arr,compType)
     {
         lbl = 'Trigger'; 
     }
+    else if(compType == 'LightningComponentBundle')
+    {
+        lbl = 'LWC'; 
+    }
     
     if(arr.length > 0)
     {
