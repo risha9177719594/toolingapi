@@ -25,6 +25,9 @@ $("#createMenu").on("click","a",function(e){
     }else if($ele.attr('compType') == 'ApexComponent')
     {
         $("#codeBody").text(vfComponent.replace('<USERNAME_PH>',$("#loggedInUser").text()).replace('<Date_PH>', tDate ));  
+    }else if($ele.attr('compType') == 'LWC')
+    {
+        $("#codeBody").text(vfComponent.replace('<USERNAME_PH>',$("#loggedInUser").text()).replace('<Date_PH>', tDate ));  
     }
     else
     {

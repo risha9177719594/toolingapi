@@ -43,6 +43,7 @@ function getResourceLists(q,arr,compType) {
 var arrApex = new Array();
 var arrVF = new Array();
 var arrTrigger = new Array(); 
+var arrLWC = new Array(); 
 var curSelRes = new Object();
 
 function getExistingFiles()
@@ -50,6 +51,7 @@ function getExistingFiles()
     getResourceLists('SELECT Id,Name FROM ApexClass Order By Name',arrApex,'ApexClass'); 
     getResourceLists('SELECT Id,Name FROM ApexPage Order By Name',arrVF,'ApexPage'); 
     getResourceLists('SELECT Id,Name FROM ApexTrigger Order By Name',arrTrigger,'ApexTrigger'); 
+    getResourceLists('SELECT Id,Name FROM LightningComponentBundle Order By Name',arrLWC,'LightningComponentBundle'); 
     
 }
 function getAccountDetails()
@@ -193,6 +195,7 @@ $( "#txtSearch" ).keyup(function(e) {
     var TargetEle = $(e.target);
     
     var srArrApex = new Array();
+    var srArrLWC = new Array();
     var srArrVF = new Array();
     var srArrTrigger = new Array(); 
     
@@ -200,9 +203,13 @@ $( "#txtSearch" ).keyup(function(e) {
     { 
         
         tmpArrApex = jQuery.grep(arrApex, function(n) {  
-          return ( n.Name.indexOf(TargetEle.val()) >= 0 );
-        });
+            return ( n.Name.indexOf(TargetEle.val()) >= 0 );
+          });
         
+        srArrLWC = jQuery.grep(arrLWC, function(n) {  
+        return ( n.Name.indexOf(TargetEle.val()) >= 0 );
+        });
+            
         tmpArrVF = jQuery.grep(arrVF, function( n) {
           return ( n.Name.indexOf(TargetEle.val()) >= 0 );
         });
@@ -214,12 +221,14 @@ $( "#txtSearch" ).keyup(function(e) {
         prepareListOptions(tmpArrApex,'ApexClass');
         prepareListOptions(tmpArrVF,'ApexPage');
         prepareListOptions(tmpArrTrigger,'ApexTrigger');
+        prepareListOptions(srArrLWC,'LWC');
     }
     else{
         $(".removeDuringSearch").remove();
         prepareListOptions(arrApex,'ApexClass');
         prepareListOptions(arrVF,'ApexPage');
         prepareListOptions(arrTrigger,'ApexTrigger');
+        prepareListOptions(arrLWC,'LWC');
     }     
     
 });
